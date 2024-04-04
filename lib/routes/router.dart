@@ -1,3 +1,7 @@
+import 'package:flutter_app/routes/guards/dashboard_route_guard.dart';
+
+import '/resources/pages/main_page.dart';
+import '/resources/pages/dashboard_page.dart';
 import '/resources/pages/home_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
@@ -10,17 +14,20 @@ import 'package:nylo_framework/nylo_framework.dart';
 |-------------------------------------------------------------------------- */
 
 appRouter() => nyRoutes((router) {
-  router.route(HomePage.path, (context) => HomePage(), initialRoute: true);
-  // Add your routes here
+      router.route(HomePage.path, (context) => HomePage());
+      // Add your routes here
 
-  // router.route(NewPage.path, (context) => NewPage(), transition: PageTransitionType.fade);
+      // router.route(NewPage.path, (context) => NewPage(), transition: PageTransitionType.fade);
 
-  // Example using grouped routes
-  // router.group(() => {
-  //   "route_guards": [AuthRouteGuard()],
-  //   "prefix": "/dashboard"
-  // }, (router) {
-  //
-  //   router.route(AccountPage.path, (context) => AccountPage());
-  // });
-});
+      // Example using grouped routes
+      // router.group(() => {
+      //   "route_guards": [AuthRouteGuard()],
+      //   "prefix": "/dashboard"
+      // }, (router) {
+      //
+      //   router.route(AccountPage.path, (context) => AccountPage());
+      // });
+      router.route(DashboardPage.path, (context) => DashboardPage(),
+          routeGuards: [DashboardRouteGuard()], initialRoute: true);
+      router.route(MainPage.path, (context) => MainPage());
+    });
