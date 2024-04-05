@@ -1,5 +1,4 @@
 import 'package:flutter_app/routes/guards/dashboard_route_guard.dart';
-
 import '/resources/pages/main_page.dart';
 import '/resources/pages/dashboard_page.dart';
 import '/resources/pages/home_page.dart';
@@ -28,6 +27,6 @@ appRouter() => nyRoutes((router) {
       //   router.route(AccountPage.path, (context) => AccountPage());
       // });
       router.route(DashboardPage.path, (context) => DashboardPage(),
-          routeGuards: [DashboardRouteGuard()], initialRoute: true);
-      router.route(MainPage.path, (context) => MainPage());
+          routeGuards: [DashboardRouteGuard()], authPage: true);
+      router.route(MainPage.path, (context) => MainPage(), initialRoute: true);
     });
