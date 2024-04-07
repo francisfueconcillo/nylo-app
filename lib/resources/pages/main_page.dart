@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/resources/widgets/custom_app_bar_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 import '/app/controllers/main_controller.dart';
 
@@ -19,6 +20,8 @@ class _MainPageState extends NyState<MainPage> {
   // boot() async {
   //
   // }
+
+  final double ICON_SIZE = 30.0;
 
   @override
   Widget view(BuildContext context) {
@@ -47,9 +50,10 @@ class _MainPageState extends NyState<MainPage> {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Main'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('Main'),
+      // ),
+      appBar: CustomAppBar(),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
@@ -60,26 +64,27 @@ class _MainPageState extends NyState<MainPage> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Tab 1',
+            icon: Icon(Icons.search, size: ICON_SIZE),
+            label: 'Explore',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Tab 2',
+            icon: Icon(Icons.favorite_border, size: ICON_SIZE),
+            label: 'Wishlist',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Tab 3',
+            icon: Icon(Icons.add_circle_outline, size: ICON_SIZE),
+            label: 'Sell',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Tab 4',
+            icon: Icon(Icons.chat_bubble_outline, size: ICON_SIZE),
+            label: 'Messages',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Tab 5',
+            icon: Icon(Icons.perm_identity, size: ICON_SIZE),
+            label: 'Account',
           ),
         ],
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }
