@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '/bootstrap/helpers.dart';
-import '/resources/widgets/search_box_widget.dart';
+import 'search_box_widget.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});

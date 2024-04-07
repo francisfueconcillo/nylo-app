@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/resources/widgets/custom_app_bar_widget.dart';
 import 'package:nylo_framework/nylo_framework.dart';
+import '../widgets/custom_app_bar/custom_app_bar_widget.dart';
 import '/app/controllers/main_controller.dart';
+import '/resources/widgets/items_grid_widget.dart';
 
 class MainPage extends NyStatefulWidget<MainController> {
   static const path = '/main';
@@ -27,6 +28,11 @@ class _MainPageState extends NyState<MainPage> {
   Widget view(BuildContext context) {
     final List<Widget> _pages = [
       Container(
+        child: Center(
+          child: ItemsGrid(),
+        ),
+      ),
+      Container(
         child: MaterialButton(
             onPressed: widget.controller.onTapDocumentation,
             child: Text(
@@ -34,9 +40,6 @@ class _MainPageState extends NyState<MainPage> {
             ).bodyLarge(context)
             // .setColor(context, (color) => color.surfaceContent),
             ),
-      ),
-      Container(
-        child: Text("Tab 2"),
       ),
       Container(
         child: Text("Tab 3"),

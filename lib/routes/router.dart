@@ -1,8 +1,8 @@
-import 'package:flutter_app/routes/guards/dashboard_route_guard.dart';
+import 'package:nylo_framework/nylo_framework.dart';
+import '/routes/guards/dashboard_route_guard.dart';
 import '/resources/pages/main_page.dart';
 import '/resources/pages/dashboard_page.dart';
 import '/resources/pages/home_page.dart';
-import 'package:nylo_framework/nylo_framework.dart';
 
 /* App Router
 |--------------------------------------------------------------------------
